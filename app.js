@@ -2,10 +2,18 @@ Ext.Loader.setPath({
 	'Ext': 'sdk/src/',
     'CRWeb': 'app'
 });
+var baseUrlVar ='http://cr.xeago.eu';
+var googleAjaxApiVar ='https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=-1&q=';
+var twitterUrlVar =(googleAjaxApiVar+'http://feeds.feedburner.com/IprojvTwitter');
+var newsUrlVar =googleAjaxApiVar+baseUrlVar+'/category/feed/Website.aspx';
 
 Ext.application({
 
     name: 'CRWeb',
+	baseUrl: baseUrlVar, // 'http://cr.xeago.eu/',
+	twitterUrl :twitterUrlVar, //'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=-1&q=http://feeds.feedburner.com/IprojvTwitter'
+	newsUrl : newsUrlVar, //https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=-1&q=http://cr.xeago.eu/category/feed/Website.aspx
+	
 	controllers:['NewsController','Tweets','PlayerController'],
 	
     requires: [
@@ -14,7 +22,7 @@ Ext.application({
     ],
 
     views: ['Main','News','Tweets','Home','SponsorPage','Player','RecentSongs', 'Info'],
-	stores: ['Tweets','SponsorStore','RecentSongsStore'],
+	stores: ['Tweets','SponsorStore'],
 	twitterSearch: 'Carnaval Radio',
 	
     icon: {
@@ -57,4 +65,5 @@ Ext.application({
             }
         );
     }
+	
 });

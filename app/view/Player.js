@@ -11,7 +11,7 @@ Ext.define('sponsorPanel' ,{
 			tap: function(){goToSponsorTab();},		
 			painted : function(panel) {
 				Ext.Ajax.request({
-					url:'http://cr.xeago.eu/json/rotatingMobileSponsor.json',
+					url:(CRWeb.app.baseUrl+'/json/rotatingMobileSponsor.json'),
 					success: function (response){
 						imagesJson=Ext.JSON.decode(response.responseText);
 						sponsorPanel=panel;
@@ -123,7 +123,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'http://cr.xeago.eu/AudioStreams/Carnaval-Radio.json',
+						url:(CRWeb.app.baseUrl+'/AudioStreams/Carnaval-Radio.json'),
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();
@@ -149,7 +149,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'http://cr.xeago.eu/AudioStreams/Carnaval-Radio.json',
+						url:(CRWeb.app.baseUrl+'/AudioStreams/Carnaval-Radio.json'),
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();

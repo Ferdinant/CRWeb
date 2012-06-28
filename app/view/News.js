@@ -40,7 +40,7 @@ Ext.define("CRWeb.view.News", {
 					},
 					proxy: {
 						type:'jsonp',
-						url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://cr.xeago.eu/category/feed/Website.aspx',
+						url: (CRWeb.app.newsUrl),
 						reader: {
 							type: 'json',
 							rootProperty: 'responseData.feed.entries'
