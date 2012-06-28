@@ -33,7 +33,7 @@ Ext.define('CRWeb.view.RecentSongs', {
 							'Content-Type': 'application/json',
 							//'content-Length': '0'
 						},
-						url: 'http://cr.xeago.eu/RecentSongsService.asmx/RecentSongs',
+						url: (CRWeb.app.baseUrl+'/RecentSongsService.asmx/RecentSongs'),
 						reader: {
 							type: 'json',
 							rootProperty: 'd'
